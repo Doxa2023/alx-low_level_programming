@@ -1,10 +1,7 @@
 #include <stdio.h>
 
 /**
- * add new line to code
- * @n: intiger
- * @a: variable
- * @p: variable
+ * main - entry point
  *
  * Return: 0
  */
