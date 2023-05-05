@@ -1,5 +1,14 @@
 #include <stdio.h>
 
+/**
+ * add new line to code
+ * @n: intiger
+ * @a: variable
+ * @p: variable
+ *
+ * Return: 0
+ */
+
 int main(void)
 {
 	int n;
