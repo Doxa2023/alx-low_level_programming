@@ -1,17 +1,30 @@
 #include "main.h"
+
 /**
- * _puts_recursion - function like puts();
- * @s: input
- * Return: Always 0 (Success)
+ * wildcmp - compare strings
+ * @s1: pointer to string params
+ * @s2: pointer to string params
+ * Return: 0
  */
-void _puts_recursion(char *s)
+
+int wildcmp(char *s1, char *s2)
 {
-	if (*s)
+	if (*s1 == '\0')
 	{
-		_putchar(*s);
-		_puts_recursion(s + 1);
+		if (*s2 != '\0' && *s2 == '*')
+		{
+			return (wildcmp(s1, s2 + 1));
+		}
+		return (*s2 == '\0');
 	}
 
-	else
-		_putchar('\n');
+	if (*s2 == '*')
+	{
+		return (wildcmp(s1 + 1, s2) || wildcmp(s1, s2 + 1));
+	}
+	else if (*s1 == *s2)
+	{
+		return (wildcmp(s1 + 1, s2 + 1));
+	}
+	return (0);
 }
